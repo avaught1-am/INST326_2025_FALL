@@ -146,8 +146,39 @@ def pizza_amount_selection(self, pizza_type):
 
 
 
-
-
 ## PROBLEM C: Delivery
-    
+#Probelm C - Jaena Manalo
+#Pizza Delivery
+#deliveries are based on priority/order number
+    #if the order number is smaller then the next one, then that order should be 
+    #delivered first before the next one
+#sort list of orders based on priority with lambda to sort from least to
+#greatest
+
+
+orders = [
+    {'customer_name': 'Jaena', 'order_number': 7},
+    {'customer_name': 'Neil',  'order_number': 9},
+    {'customer_name': 'Angela', 'order_number': 12}
+]
+
+#sort the list with lambda
+sorted_orders = sorted(orders, key=lambda x: x['order_number'])
+print(f"sorted orders: {sorted_orders}")
+
+#set operations for tracking the order and deliver it based the sorted order
+all_orders = {order['customer_name'] for order in sorted_orders}
+completed = set()
+
+for order in sorted_orders[:2]:
+    name = order['customer_name']
+    print(f"Deliver to {name} Order #{order['order_number']})")
+    completed.add(name)
+
+pending = all_orders - completed
+
+#status of the deliveries
+print("All Customer Deliveries:", all_orders)
+print("Completed deliveries:", completed)
+print("Pending deliveries:", pending)
     
