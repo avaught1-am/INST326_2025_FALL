@@ -4,13 +4,14 @@ import os
 import random
 
 class Pizza:
-    def __init__(self, size, toppings, sauce):
+    def __init__(self, size, toppings, sauce, order_number):
         self.size = size
         self.toppings = toppings
         self.sauce = sauce
+        self.order_number = order_number
         
     def __str__(self):
-        return f"{self.size} pizza with {' , '.join(self.toppings)} and {self.sauce} sauce"
+        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
 
 
 
