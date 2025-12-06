@@ -1,0 +1,44 @@
+{
+    "sizes": ["small", "medium", "large", "extra-large"],
+    
+    "sauces": ["tomato", "white sauce", "pesto", "ranch", "buffalo sauce", "BBQ sauce"],
+
+    "toppings": [
+        "pepperoni",
+        "sausage",
+        "bacon",
+        "mushrooms",
+        "green peppers",
+        "pineapple",
+        "extra cheese",
+        "cheese",
+        "spinach",
+        "olives",
+        "garlic",
+        "onions",
+        "chicken",
+        "jalapenos",
+        "ham"
+    ],
+
+    "preset_pizzas": {
+        "meat_lovers": {
+            "sauce": "tomato",
+            "toppings": ["cheese", "pepperoni", "sausage", "bacon", "ham"]
+        },
+        "hawaiian": {
+            "sauce": "tomato",
+            "toppings": ["cheese", "ham", "pineapple"]
+        },
+        "supreme": {
+            "sauce": "tomato",
+            "toppings": ["cheese", "pepperoni", "sausage", "green peppers", "onions", "mushrooms"]
+        },
+        "buffalo": {
+            "sauce": "buffalo sauce",
+            "toppings": ["cheese", "chicken", "onions", "bacon"]
+        }
+    }
+
+
+}
