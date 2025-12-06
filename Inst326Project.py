@@ -191,4 +191,9 @@ class Pizza:
     print("All Customer Deliveries:", all_orders)
     print("Completed deliveries:", completed)
     print("Pending deliveries:", pending)
+
+
+#clear the screen once finished
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
     
