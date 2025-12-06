@@ -2,6 +2,7 @@ import sys
 import time
 import os
 import random
+import json
 
 class Pizza:
     def __init__(self, size, toppings, sauce, order_number):
@@ -14,9 +15,14 @@ class Pizza:
         return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
 
     
+def load_pizza_menu():
+    """Load pizza options from JSON file"""
+    with open("pizza_data.json", "r") as file:
+        pizza_menu = json.load(file)
+    return pizza_menu
 
     # Problem A: Creating Customer Orders based on the type of pizzas
-    def customer_order(self):
+def customer_order(self):
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
         Args:
