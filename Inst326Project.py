@@ -1,8 +1,18 @@
 import sys
 import time
+import os
+import random
+
+class Pizza:
+    def __init__(self, size, toppings, sauce):
+        self.size = size
+        self.toppings = toppings
+        self.sauce = sauce
+        
+    def __str__(self):
+        return f"{self.size} pizza with {' , '.join(self.toppings)} and {self.sauce} sauce"
 
 
-pizza = []
 
 # Problem A: Creating Customer Orders based on the type of pizzas
 def customer_order(self, pizza):
@@ -21,7 +31,7 @@ def customer_order(self, pizza):
         Modifes the different orders for each customer type (by each round of the game)
 
     """
-    
+    pizza_date = load_pizza_data()
     #load json file 
     pizza = {self}
     
