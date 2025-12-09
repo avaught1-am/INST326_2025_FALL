@@ -23,7 +23,7 @@ def load_pizza_menu():
     return pizza_menu
 
     # Problem A: Creating Customer Orders based on the type of pizzas
-def customer_order(self):
+def customer_order():
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
         Args:
@@ -208,10 +208,48 @@ class PizzaDelivery:
 
 #play the game
 def PizzaGame():
-    delivery = PizzaDelivery
+    delivery = PizzaDelivery()
     order_counter = 100
     
+    #starting screen
+    print("Work at a Pizza Place!")
     
+    while True:
+        print("Main Menu")
+        print("Would You Like to Take an order?")
+        choice = input("\nYes or No\n")
+        
+        if choice.lower() == "yes":
+            #problem A
+            order_counter += 1
+            order_details = customer_order()
+        
+        #pizza amt selection
+            if order_details:
+                if validate_topping_count(order_details['toppings']):
+                    confirm = input("press enter to make pizza")
+                    #time countdown
+                    success = time_countdown()
+                    if success:
+                        #transfer to deliveries if success
+                        pizza = Pizza(
+                            order_details['size'],
+                            order_details['toppings'],
+                            order_details['sauce'],
+                            order_counter
+                        )
+                        delivery.add_order(pizza)
+                        print("deliver this pizza")
+                        
+        elif choice.lower() == "No":
+            print("thanks for playing!")
+            print("goodbye!")
+    
+            
+    
+if __name__=="__main__":
+    PizzaGame()
+
 #clear the screen once finished
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
