@@ -39,7 +39,7 @@ def customer_order():
             Modifes the different orders for each customer type (by each round of the game)
     
         """
-        pizza_date = load_pizza_data()
+        pizza_date = load_pizza_menu()
         #load json file 
         pizza = {self}
         
@@ -91,7 +91,13 @@ def customer_order():
         #return with the description of the order list the given customer ordered by dictionary
         return Cus_Order == (size, meat, veg)
 
-
+def validate_topping_count(toppings):
+    if len(toppings) <= 3:
+        print(f"Enough Amount of Toppings: {len(toppings)}/3")
+        return True
+    else:
+        print(f"Too many toppings! {len(toppings)}/3")
+        return False
 
 
 
@@ -216,7 +222,7 @@ def PizzaGame():
     
     while True:
         print("Main Menu")
-        print("Would You Like to Take an order?")
+        print("Would You Like to Take a Customer's order?")
         choice = input("\nYes or No\n")
         
         if choice.lower() == "yes":
@@ -241,7 +247,7 @@ def PizzaGame():
                         delivery.add_order(pizza)
                         print("deliver this pizza")
                         
-        elif choice.lower() == "No":
+        elif choice.lower() == "no":
             print("thanks for playing!")
             print("goodbye!")
     
