@@ -99,7 +99,7 @@ def customer_order(self):
     
     
     # Problem B.1) assembling pizza with a timer countdown
-    def time_countdown():
+def time_countdown():
         """Time how long it takes to assemble the pizza and check if under 3 min
         
         Returns:
@@ -137,7 +137,7 @@ def customer_order(self):
     
     #### 2). This section asks for how many max amount opping selections that each player can use for the game (MOST CAN BE ESTABLISHED USING SELF CLAUSE)
             
-    def pizza_amount_selection(self, pizza_type):
+def pizza_amount_selection(self, pizza_type):
         """Sets the max amount of toppings in the pizza assembly
         
         Args: 
@@ -172,34 +172,45 @@ def customer_order(self):
     #sort list of orders based on priority with lambda to sort from least to
     #greatest
     
+class PizzaDelivery:
+    def __init__(self):
+        self.orders = []
+        self.completed = set()
+        
+    def add_order(self, pizza):
+        self.orders.append(pizza)
+        print(f"Added: {pizza}")
     
-    orders = [
-        {'customer_name': 'Jaena', 'order_number': 7},
-        {'customer_name': 'Neil',  'order_number': 9},
-        {'customer_name': 'Angela', 'order_number': 12}
-    ]
+    def complete_order(self, order_number):
+        self.completed.add(order_number)
+        print(f"order #{order_number} completed!")
     
-    #sort the list with lambda
-    sorted_orders = sorted(orders, key=lambda x: x['order_number'])
-    print(f"sorted orders: {sorted_orders}")
-    
-    #set operations for tracking the order and deliver it based the sorted order
-    all_orders = {order['customer_name'] for order in sorted_orders}
-    completed = set()
-    
-    for order in sorted_orders[:2]:
-        name = order['customer_name']
-        print(f"Deliver to {name} Order #{order['order_number']})")
-        completed.add(name)
-    
-    pending = all_orders - completed
-    
-    #status of the deliveries
-    print("All Customer Deliveries:", all_orders)
-    print("Completed deliveries:", completed)
-    print("Pending deliveries:", pending)
+    def show_deliveries(self):
+        print("\n" + "="*60)
+        print("Delivery queue (sorted by priority)")
+        print("="*60)
+        
+        #lambda function
+        sorted_orders = sorted(self.orders, key=lambda p: p.order_number)
+        #set operations
+        all_order_numbers = set(p.order_number for p in self.orders)
+        pending = all_order_numbers - self.completed
+        
+        for pizza in sorted_orders:
+            status = "Completed" if pizza.order_number in self.completed else "Pending"
+            print(f"{pizza} - {status}")
+        
+        print("="*60)
+        print(f"Total: {len(all_order_numbers)} | Pending: {len(pending)}\n")
+        print(f"Completed: {len(self.completed)}")
+        print("="*60)
 
-
+#play the game
+def PizzaGame():
+    delivery = PizzaDelivery
+    order_counter = 100
+    
+    
 #clear the screen once finished
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
