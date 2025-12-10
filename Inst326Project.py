@@ -5,6 +5,9 @@ import random
 import json
 import re
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
 class Pizza:
     def __init__(self, size, toppings, sauce, order_number):
         self.size = size
@@ -234,7 +237,5 @@ def PizzaGame():
 if __name__=="__main__":
     PizzaGame()
 
-#clear the screen once finished
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+
     
