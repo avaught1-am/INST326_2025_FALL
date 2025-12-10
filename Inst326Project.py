@@ -23,7 +23,7 @@ def load_pizza_menu():
     return pizza_menu
 
     # Problem A: Creating Customer Orders based on the type of pizzas
-def customer_order():
+def customer_order(self):
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
         Args:
@@ -221,7 +221,6 @@ def PizzaGame():
     print("Work at a Pizza Place!")
     
     while True:
-        print("Main Menu")
         print("Would You Like to Take a Customer's order?")
         choice = input("\nYes or No\n")
         
@@ -250,6 +249,7 @@ def PizzaGame():
         elif choice.lower() == "no":
             print("thanks for playing!")
             print("goodbye!")
+            break
     
             
     
