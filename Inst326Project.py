@@ -202,6 +202,37 @@ def PizzaGame():
             #problem A
             order_counter += 1
             order_details = customer_order()
+            pizza = Pizza(order_details["size"], order_details["toppings"], order_details["sauce"], order_counter)
+            print(pizza)
+            time.sleep(10)
+            clear_screen()
+            
+            while True:
+                player_input = input("please start assembling the pizza")
+                ingredients_list = player_input.split()
+                # Have the player type in dough for the assembly
+                if len(ingredients_list) < 4:
+                    print("Make sure you fully assemble the pizza! what is missing?")
+                elif ingredients_list[1] != "dough":
+                    print("Error! Must have 'dough' in the assembly")
+                else:
+                    playerin_size = ingredients_list[0]
+                    playerin_sauce = ingredients_list[2]
+                    playerin_cheese = ingredients_list[3]
+                    playerin_toppings = ingredients_list[4:]
+                    break
+                    
+            player_all_toppings = [playerin_cheese] + playerin_toppings
+            
+            if playerin_size == order_details["size"] and playerin_sauce == order_details["sauce"] and player_all_toppings == order_details["toppings"]:
+                print("Perfect! The pizza assembly is correct")
+                print("The pizza is now cooking...")
+                time.sleep(10)
+            else:
+                print("The assembled pizza does not match the order try again")
+                
+                
+        
         
         #pizza amt selection
             if order_details:
@@ -211,12 +242,6 @@ def PizzaGame():
                     success = time_countdown()
                     if success:
                         #transfer to deliveries if success
-                        pizza = Pizza(
-                            order_details['size'],
-                            order_details['toppings'],
-                            order_details['sauce'],
-                            order_counter
-                        )
                         delivery.add_order(pizza)
                         print("deliver this pizza")
                     else:
