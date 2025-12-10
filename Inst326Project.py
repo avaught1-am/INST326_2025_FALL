@@ -23,10 +23,10 @@ def load_pizza_menu():
     """Load pizza options from JSON file"""
     with open("pizza_data.json", "r") as file:
         pizza_menu = json.load(file)
-    return pizza_menu
+        return pizza_menu
 
     # Problem A: Creating Customer Orders based on the type of pizzas
-def customer_order(self):
+def customer_order():
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
         Args:
@@ -56,21 +56,7 @@ def customer_order(self):
         
         #return a dictionary
         return {"size": size, "sauce": sauce, "toppings": toppings}
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
 
 def validate_topping_count(toppings):
     if len(toppings) <= 3:
@@ -79,8 +65,6 @@ def validate_topping_count(toppings):
     else:
         print(f"Too many toppings! {len(toppings)}/3")
         return False
-
-
 
 
     ##### PROBLEM B: PIZZA ASSEMBLY
@@ -121,10 +105,10 @@ def time_countdown():
             return False
     
     
-    #Problem B)2. Max Amount of Selection of Toppings
-    
-    #### 2). This section asks for how many max amount opping selections that each player can use for the game (MOST CAN BE ESTABLISHED USING SELF CLAUSE)
-            
+        #Problem B)2. Max Amount of Selection of Toppings
+        
+        #### 2). This section asks for how many max amount opping selections that each player can use for the game (MOST CAN BE ESTABLISHED USING SELF CLAUSE)
+                
 def pizza_amount_selection(self, pizza_type):
         """Sets the max amount of toppings in the pizza assembly
         
@@ -226,6 +210,8 @@ def PizzaGame():
                         )
                         delivery.add_order(pizza)
                         print("deliver this pizza")
+                    else:
+                        print("You failed to finish making pizza in time")
                         
         elif choice.lower() == "no":
             print("thanks for playing!")
