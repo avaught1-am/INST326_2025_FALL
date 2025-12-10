@@ -39,57 +39,35 @@ def customer_order():
             Modifes the different orders for each customer type (by each round of the game)
     
         """
-        pizza_date = load_pizza_menu()
-        #load json file 
-        pizza = {self}
+        pizza_data = load_pizza_menu()
         
-        #group following files
-        size = group(size)
-        meat = group(meat)
-        veggies = group(veggies)
+        #make a dictionary with the three componments
+        #1). Size Type
+        size = random.choice(pizza_data["sizes"])
+        #2). Sauce Type
+        sauce = random.choice(pizza_data["sauces"])
+        #how many toppings to choose
+        amt_top = random.randint(1,3)
+        #3). Topping Type (how many toppings to choose)
+        toppings = random.sample(pizza_data["toppings"], k=amt_top)
+        
+        #return a dictionary
+        return {"size": size, "sauce": sauce, "toppings": toppings}
         
         
-        #find the specific pizza using regular expression
-        ## a). based on size 
-        for spec_types in pizza:
-            for size_search in pizza: 
-                size_search = re.search(r"\b(P<size>)")
-                #match the size
-                try:
-                    size_search == size
-                    #return with the size
-                    size 
-                #otherwise return None
-                except:
-                    NameError = "Incorrect Size"
-            
-            ## b). based on any meat type (if not none)
-            while True:
-                for meat_search in pizza: 
-                    meat_search = re.search(r"\b(P<meat>)")
-                    #match the size
-                    if meat_search == meat:
-                        #return with the meat
-                        order = meat 
-                    #otherwise return None
-                    else:
-                       "Try Again"
-            ## c). based on any veggies (if not none)
-            while True:
-                for veg_search in pizza: 
-                    veg_search = re.search(r"\b(P<veggies>)")
-                    #match the size
-                    if veg_search == veg:
-                        #return with the veggies
-                        order = veg 
-                    #otherwise return None
-                    else:
-                        "Try Again"
         
-        #do a couple of rounds as well for each customer
-        spec_types += 1
-        #return with the description of the order list the given customer ordered by dictionary
-        return Cus_Order == (size, meat, veg)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 def validate_topping_count(toppings):
     if len(toppings) <= 3:
