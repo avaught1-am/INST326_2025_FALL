@@ -1,7 +1,7 @@
 {
     "sizes": ["small", "medium", "large", "extra-large"],
     
-    "sauces": ["tomato", "white sauce", "pesto", "ranch", "buffalo sauce", "BBQ sauce"],
+    "sauces": ["tomato", "white", "pesto", "ranch", "buffalo", "BBQ"],
 
     "toppings": [
         "pepperoni",
@@ -35,7 +35,7 @@
             "toppings": ["cheese", "pepperoni", "sausage", "green peppers", "onions", "mushrooms"]
         },
         "buffalo": {
-            "sauce": "buffalo sauce",
+            "sauce": "buffalo",
             "toppings": ["cheese", "chicken", "onions", "bacon"]
         }
     }
