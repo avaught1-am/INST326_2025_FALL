@@ -25,7 +25,9 @@ def load_pizza_menu():
         pizza_menu = json.load(file)
         return pizza_menu
 
-    # Problem A: Creating Customer Orders based on the type of pizzas
+    
+# Problem A: Creating Customer Orders based on the type of pizzas
+
 def customer_order():
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
@@ -44,18 +46,25 @@ def customer_order():
         """
         pizza_data = load_pizza_menu()
         
-        #make a dictionary with the three componments
-        #1). Size Type
-        size = random.choice(pizza_data["sizes"])
-        #2). Sauce Type
-        sauce = random.choice(pizza_data["sauces"])
-        #how many toppings to choose
-        amt_top = random.randint(1,3)
-        #3). Topping Type (how many toppings to choose)
-        toppings = random.sample(pizza_data["toppings"], k=amt_top)
+        order_type = random.choice(["preset", "custom"])
         
+        if order_type == "preset":
+            preset_name = random.choice(list(pizza_data["preset_pizzas"].keys()))
+            preset_info = pizza_data["preset_pizzas"][preset_name]
+            sauce = preset_info["sauce"]
+            toppings = preset_info["toppings"]
+            size = random.choice(pizza_data["sizes"])
+            return {"size": size, "sauce": sauce, "toppings": toppings}
+        else:
+            size = random.choice(pizza_data["sizes"])
+        #2). Sauce Type
+            sauce = random.choice(pizza_data["sauces"])
+        #how many toppings to choose
+            amt_top = random.randint(1,3)
+        #3). Topping Type (how many toppings to choose)
+            toppings = random.sample(pizza_data["toppings"], k=amt_top)
         #return a dictionary
-        return {"size": size, "sauce": sauce, "toppings": toppings}
+            return {"size": size, "sauce": sauce, "toppings": toppings}
     
 
 def validate_topping_count(toppings):
