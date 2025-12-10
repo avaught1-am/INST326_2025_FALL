@@ -16,7 +16,7 @@ class Pizza:
         self.order_number = order_number
         
     def __str__(self):
-        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
+        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce}"
 
     
 def load_pizza_menu():
@@ -59,25 +59,14 @@ def customer_order():
             size = random.choice(pizza_data["sizes"])
         #2). Sauce Type
             sauce = random.choice(pizza_data["sauces"])
+            cheese_options = ["cheese", "extra cheese"]
+            cheese = random.choice(cheese_options)
         #how many toppings to choose
             amt_top = random.randint(1,3)
         #3). Topping Type (how many toppings to choose)
             toppings = random.sample(pizza_data["toppings"], k=amt_top)
         #return a dictionary
             return {"size": size, "sauce": sauce, "toppings": toppings}
-    
-
-def validate_topping_count(toppings):
-    if len(toppings) <= 3:
-        print(f"Enough Amount of Toppings: {len(toppings)}/3")
-        return True
-    else:
-        print(f"Too many toppings! {len(toppings)}/3")
-        return False
-
-
-    ##### PROBLEM B: PIZZA ASSEMBLY
-    
     
     # Problem B.1) assembling pizza with a timer countdown
 def time_countdown():
@@ -208,44 +197,37 @@ def PizzaGame():
             clear_screen()
             
             while True:
-                player_input = input("please start assembling the pizza")
+                player_input = input("please start assembling the pizza (separate with spaces, no commas: ")
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 4:
-                    print("Make sure you fully assemble the pizza! what is missing?")
-                elif ingredients_list[1] != "dough":
-                    print("Error! Must have 'dough' in the assembly")
-                else:
-                    playerin_size = ingredients_list[0]
-                    playerin_sauce = ingredients_list[2]
-                    playerin_cheese = ingredients_list[3]
-                    playerin_toppings = ingredients_list[4:]
-                    break
-                    
-            player_all_toppings = [playerin_cheese] + playerin_toppings
+                    print("Make sure you fully assemble the pizza! Missing size, dough, sauce, or cheese.")
+                    continue
+                elif "dough" not in ingredients_list:
+                    print("Error! You must have the dough when making the pizza!")
+                    continue
+               
+                playerin_size = ingredients_list[0]
+                playerin_sauce = ingredients_list[2]
+                playerin_cheese = ingredients_list[3]
+                playerin_toppings = ingredients_list[4:]
+                
+                if len(playerin_toppings) > 3:
+                    print("Too many toppings! Max is 3.")    
+                    continue
+                
+                player_all_toppings = [playerin_cheese] + playerin_toppings
             
-            if playerin_size == order_details["size"] and playerin_sauce == order_details["sauce"] and player_all_toppings == order_details["toppings"]:
-                print("Perfect! The pizza assembly is correct")
-                print("The pizza is now cooking...")
-                time.sleep(10)
-            else:
-                print("The assembled pizza does not match the order try again")
+                if playerin_size == order_details["size"] and playerin_sauce == order_details["sauce"] and set(player_all_toppings) == set(order_details["toppings"]):
+                    print("Perfect! The pizza assembly is correct")
+                    print("The pizza is now cooking...")
+                    time.sleep(10)
+                    delivery.add_order(pizza)
+                    print("Pizza was completed and sent for delivery!")
+                    break
+                else:
+                    print("The assembled pizza does not match the order try again")
                 
-                
-        
-        
-        #pizza amt selection
-            if order_details:
-                if validate_topping_count(order_details['toppings']):
-                    confirm = input("press enter to make pizza")
-                    #time countdown
-                    success = time_countdown()
-                    if success:
-                        #transfer to deliveries if success
-                        delivery.add_order(pizza)
-                        print("deliver this pizza")
-                    else:
-                        print("You failed to finish making pizza in time")
                         
         elif choice.lower() == "no":
             print("thanks for playing!")
