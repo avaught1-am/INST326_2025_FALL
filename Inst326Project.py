@@ -16,7 +16,7 @@ class Pizza:
         self.order_number = order_number
         
     def __str__(self):
-        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce}"
+        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
 
     
 def load_pizza_menu():
@@ -193,7 +193,7 @@ def PizzaGame():
             order_details = customer_order()
             pizza = Pizza(order_details["size"], order_details["toppings"], order_details["sauce"], order_counter)
             print(pizza)
-            time.sleep(10)
+            time.sleep(20)
             clear_screen()
             
             while True:
@@ -203,8 +203,8 @@ def PizzaGame():
                 if len(ingredients_list) < 4:
                     print("Make sure you fully assemble the pizza! Missing size, dough, sauce, or cheese.")
                     continue
-                elif "dough" not in ingredients_list:
-                    print("Error! You must have the dough when making the pizza!")
+                elif len(ingredients_list) < 2 or ingredients_list[1] != "dough":
+                    print("Error! 'dough' must come first!")
                     continue
                
                 playerin_size = ingredients_list[0]
