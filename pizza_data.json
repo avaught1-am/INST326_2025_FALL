@@ -8,9 +8,9 @@
         "sausage",
         "bacon",
         "mushrooms",
-        "green peppers",
+        "green_peppers",
         "pineapple",
-        "extra cheese",
+        "extra_cheese",
         "cheese",
         "spinach",
         "olives",
@@ -32,7 +32,7 @@
         },
         "supreme": {
             "sauce": "tomato",
-            "toppings": ["cheese", "pepperoni", "sausage", "green peppers", "onions", "mushrooms"]
+            "toppings": ["cheese", "pepperoni", "sausage", "green_peppers", "onions", "mushrooms"]
         },
         "buffalo": {
             "sauce": "buffalo",
