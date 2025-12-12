@@ -6,6 +6,12 @@ import json
 import re
 
 def clear_screen():
+    """Clears the terminal screen
+    
+    Will work on both windows/mac systems
+    
+    Note: The professor gave us guidance on this function.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
     
 class Pizza:
@@ -72,6 +78,9 @@ def customer_order():
 def time_countdown(time_limit = 180):
         """Time how long it takes to assemble the pizza and check if under 3 min
         
+        Args:
+            time_limit (int, optional): Max time allowed in seconds and defaults to 180.
+            
         Returns:
             bool: True if under time limit, false if over
         
