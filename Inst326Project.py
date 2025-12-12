@@ -230,26 +230,25 @@ def PizzaGame():
             start_time = time.time()
             
             while True:
-                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) make sure to write in the two-word toppings with an underscore (separate the toppings with spaces, no commas: ")
-                ingredients_list = player_input.split()
+                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough, ...) \n make sure to write in the two-word toppings with an underscore (separate with commas: ")
+                ingredients_list = [item.strip() for item in player_input.split(",")]
                 # Have the player type in dough for the assembly
-                if len(ingredients_list) < 4:
-                    print("Make sure you fully assemble the pizza! Format: size dough sauce cheese [toppings]")
+                if len(ingredients_list) < 3:
+                    print("Make sure you fully assemble the pizza! Format: (size) dough, sauce, cheese, [toppings]")
                     continue
-                elif len(ingredients_list) < 2 or ingredients_list[1] != "dough":
-                    print("Error! 'dough' must come first!")
+                size_dough = ingredients_list[0].split()
+                if len(size_dough) != 2 or size_dough[1] != "dough":
+                    print("Error! First part must be 'size dough'")
                     continue
                
-                playerin_size = ingredients_list[0]
-                playerin_sauce = ingredients_list[2]
-                playerin_cheese = ingredients_list[3]
-                playerin_toppings = ingredients_list[4:]
-                
-                if len(playerin_toppings) > 8:
+                playerin_size = size_dough[0].lower()
+                playerin_sauce = ingredients_list[1].lower()
+                player_all_toppings = ingredients_list[2:]
+              
+                if len(player_all_toppings) > 8:
                     print("Too many toppings! Max is 8.")    
                     continue
                 
-                player_all_toppings = [playerin_cheese] + playerin_toppings
             
                 if playerin_size == order_details["size"] and playerin_sauce == order_details["sauce"] and set(player_all_toppings) == set(order_details["toppings"]):
                     print("Perfect! The pizza assembly is correct")
