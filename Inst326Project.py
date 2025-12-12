@@ -174,19 +174,57 @@ def time_countdown():
     #greatest
     
 class PizzaDelivery:
+    """This is a system where the pizza deliveries will be tracked and organized
+    based on priority. It has completed orders and pending orders.
+    
+    Attributes: 
+    orders(list): a list of pizza objects representing active orders
+    completed(set): set of order numbers that are completed.
+    Primary author: Jaena Manalo
+    """
+    
     def __init__(self):
+        """This will initialize the PizzaDelivery.
+        Sets up the orders and completed as data structures to properly track 
+        the orders.
+        Primary author: Jaena Manalo
+        """
         self.orders = []
         self.completed = set()
         
     def add_order(self, pizza):
+        """this adds a new order to the queue.
+
+        Args:
+            pizza (obj): represents the actual order
+            Primary author: Jaena Manalo
+        """
         self.orders.append(pizza)
         print(f"Added: {pizza}")
     
     def complete_order(self, order_number):
+        """this represents the completed orders in the queue
+
+        Args:
+            order_number (int): marks the order as completed
+            Primary author: Jaena Manalo
+        """
         self.completed.add(order_number)
         print(f"order #{order_number} completed!")
     
     def show_deliveries(self):
+        """this will display the orders and pending ones. Shows the delivery
+        queue with the order numbers listed by priority as well as the status of
+        the orders. 
+        
+        Lambda function: sorts the orders by priority
+        Set operations: displays the orders that are pending and completed
+        
+        Returns:
+        None: only prints the delivery function
+        Primary author: Jaena Manalo
+        Techniques used: Lambda function and set operations
+        """
         print("\n" + "="*60)
         print("Delivery queue (sorted by priority)")
         print("="*60)
@@ -208,6 +246,19 @@ class PizzaDelivery:
 
 #play the game
 def PizzaGame():
+    """This is the main game loop. It will start the order counter and ask the 
+    player/employee if they would like to take and order in which the answer is
+    yes or no. Then you will make a new pizza from what the customer ordered and
+    will check whether it was assembled right. The time countdown function is also
+    implemented that starts the countdown of the assembly and rules are also
+    implemented. Finally, the orders are tracked from the delivery queue. When 
+    the player inputs "no" the game ends.
+    
+    Returns:
+        None: only inputs are implemented and there are no return values.
+    
+    Primary author: Jaena Manalo
+    """
     delivery = PizzaDelivery()
     order_counter = 100
     
@@ -230,7 +281,7 @@ def PizzaGame():
             start_time = time.time()
             
             while True:
-                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas: ")
+                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas): ")
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 4:
