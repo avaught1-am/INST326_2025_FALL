@@ -69,14 +69,15 @@ def customer_order():
             return {"size": size, "sauce": sauce, "toppings": toppings}
     
     # Problem B.1) assembling pizza with a timer countdown
-def time_countdown():
+def time_countdown(time_limit = 180):
         """Time how long it takes to assemble the pizza and check if under 3 min
         
         Returns:
             bool: True if under time limit, false if over
         
+        Primary Author: Angela Vaught
+        Techniques used: F-strings, optional parameters
         """
-        time_limit = 180
         print("Timer has started please start assembling your pizza...")
         print("Press Enter when finished!")
         start_time = time.time()
@@ -197,7 +198,7 @@ def PizzaGame():
             clear_screen()
             
             while True:
-                player_input = input("please start assembling the pizza (separate with spaces, no commas: ")
+                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas: ")
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 4:
