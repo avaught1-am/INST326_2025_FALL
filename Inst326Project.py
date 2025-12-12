@@ -94,7 +94,7 @@ def customer_order(order_type = None):
             preset_name = random.choice(list(pizza_data["preset_pizzas"].keys()))
             preset_info = pizza_data["preset_pizzas"][preset_name]
             sauce = preset_info["sauce"]
-            toppings = preset_info["toppings"]
+            toppings = preset_info["toppings"][:3]
             size = random.choice(pizza_data["sizes"])
             return {"size": size, "sauce": sauce, "toppings": toppings}
         else:
@@ -163,8 +163,6 @@ def time_countdown():
         else:
             print("Ran out of time!")
             return False
-    
-            
     
     ## PROBLEM C: Delivery
     #Probelm C - Jaena Manalo
@@ -236,7 +234,7 @@ def PizzaGame():
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 4:
-                    print("Make sure you fully assemble the pizza! Missing size, dough, sauce, or cheese.")
+                    print("Make sure you fully assemble the pizza! Format: size dough sauce cheese [toppings]")
                     continue
                 elif len(ingredients_list) < 2 or ingredients_list[1] != "dough":
                     print("Error! 'dough' must come first!")
@@ -247,8 +245,8 @@ def PizzaGame():
                 playerin_cheese = ingredients_list[3]
                 playerin_toppings = ingredients_list[4:]
                 
-                if len(playerin_toppings) > 3:
-                    print("Too many toppings! Max is 3.")    
+                if len(playerin_toppings) > 8:
+                    print("Too many toppings! Max is 8.")    
                     continue
                 
                 player_all_toppings = [playerin_cheese] + playerin_toppings
