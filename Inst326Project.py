@@ -104,7 +104,7 @@ def customer_order(order_type = None):
             cheese_options = ["cheese", "extra cheese"]
             cheese = random.choice(cheese_options)
         #how many toppings to choose
-            amt_top = random.randint(1,3)
+            amt_top = random.randint(1,8)
         #3). Topping Type (how many toppings to choose)
             toppings = random.sample(pizza_data["toppings"], k=amt_top)
         #return a dictionary
