@@ -11,6 +11,8 @@ def clear_screen():
     Will work on both windows/mac systems
     
     Note: The professor gave us guidance on this function.
+    
+    Primary Author: Neil Vu (EDITED: Angela and Janena)
     """
     os.system('cls' if os.name == 'nt' else 'clear')
     
@@ -72,14 +74,13 @@ def load_pizza_menu():
 def customer_order():
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
-        Args:
-            self = reflects from lists of pizzas that each customer had specifcially ordered
-            pizza = a json file list that shows the different kinds of pizza
-        
         Returns:
             size = selected pizza size
-            meat = selected type of meat (if desired) 
-            veg =  selected type of veggies (if desired) 
+            sauce = selected type of sauce (if desired) 
+            topping =  selected type of toppings (if desired) 
+        
+        Primary Author: Neil Vu (Edited: Angela)
+        Techinques: Dictionaries (keys and values)
     
         Side Effects:
             Modifes the different orders for each customer type (by each round of the game)
@@ -154,14 +155,19 @@ def time_countdown():
         #### 2). This section asks for how many max amount opping selections that each player can use for the game (MOST CAN BE ESTABLISHED USING SELF CLAUSE)
                 
 def pizza_amount_selection(self, pizza_type):
-        """Sets the max amount of toppings in the pizza assembly
+        """THIS SECTION WILL BE DELETED - I reported it to my survey.
+        Sets the max amount of toppings in the pizza assembly
         
         Args: 
             pizza_type = connects from the assembly line and in prev. functions on type of pizzas
+        
             
         Return:
             self.ingreidents = the ingridents represented
             apply_ingr = the ingridents applied
+            
+        Primary Author: Neil Vu
+        Techinques: Sets, Dictionaries, Boolean Values (matching a specific requirement)
     
         """
         #make a dict that shows the lists
