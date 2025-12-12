@@ -12,7 +12,6 @@ def clear_screen():
     
     Note: The professor gave us guidance on this function.
     
-    Primary Author: Neil Vu (EDITED: Angela and Janena)
     """
     os.system('cls' if os.name == 'nt' else 'clear')
     
