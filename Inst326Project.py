@@ -15,6 +15,16 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
     
 class Pizza:
+    """Represents a customer's pizza order with size, toppings, sauce, and order number
+    
+    Attributes:
+        size (str): Size of the pizza (small, medium, large, extra-large)
+        toppings (list): List of toppings on pizza
+        sauce (str): Type of sauce on the pizza
+        order_number (int): Unique order tracking number
+        
+    Primary Author: Angela Vaught
+    """
     def __init__(self, size, toppings, sauce, order_number):
         self.size = size
         self.toppings = toppings
