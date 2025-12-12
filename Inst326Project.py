@@ -26,7 +26,14 @@ class Pizza:
 
     
 def load_pizza_menu():
-    """Load pizza options from JSON file"""
+    """Load pizza options from JSON file
+    
+    Returns:
+        dict: Pizza menu containing sizes, sauces, toppings, and preset pizzas
+    
+    Primary Author: Angela Vaught
+    Techniques: json.load()
+    """
     with open("pizza_data.json", "r") as file:
         pizza_menu = json.load(file)
         return pizza_menu
@@ -75,7 +82,7 @@ def customer_order():
             return {"size": size, "sauce": sauce, "toppings": toppings}
     
     # Problem B.1) assembling pizza with a timer countdown
-def time_countdown(time_limit = 180):
+def time_countdown():
         """Time how long it takes to assemble the pizza and check if under 3 min
         
         Args:
@@ -85,8 +92,9 @@ def time_countdown(time_limit = 180):
             bool: True if under time limit, false if over
         
         Primary Author: Angela Vaught
-        Techniques used: F-strings, optional parameters
+        Techniques used: F-strings
         """
+        time_limit = 180
         print("Timer has started please start assembling your pizza...")
         print("Press Enter when finished!")
         start_time = time.time()
