@@ -18,20 +18,38 @@ class Pizza:
     """Represents a customer's pizza order with size, toppings, sauce, and order number
     
     Attributes:
-        size (str): Size of the pizza (small, medium, large, extra-large)
-        toppings (list): List of toppings on pizza
-        sauce (str): Type of sauce on the pizza
-        order_number (int): Unique order tracking number
+        size: Size of the pizza (small, medium, large, extra-large)
+        toppings: List of toppings on pizza
+        sauce: Type of sauce on the pizza
+        order_number: Unique order tracking number
         
     Primary Author: Angela Vaught
     """
     def __init__(self, size, toppings, sauce, order_number):
+        """_summary_
+
+        Args:
+            size (str): size of the pizza
+            toppings (list): list of toppings
+            sauce (str): type of sauce
+            order_number (int): order tracking number
+        
+        Primary Author: Angela Vaught
+        Techniques: None
+        """
         self.size = size
         self.toppings = toppings
         self.sauce = sauce
         self.order_number = order_number
         
     def __str__(self):
+        """Return a formatted string representation of the pizza order.
+
+        Returns:
+            str: Formatted order details with order number, size, toppings, and sauce
+            
+        Primary Author: Angela Vaught 
+        """
         return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
 
     
