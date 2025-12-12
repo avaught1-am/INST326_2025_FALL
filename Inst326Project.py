@@ -108,6 +108,21 @@ def customer_order():
             toppings = random.sample(pizza_data["toppings"], k=amt_top)
         #return a dictionary
             return {"size": size, "sauce": sauce, "toppings": toppings}
+        
+def count_completed_orders(delivery_system):
+    """Count how many completed orders are there and whether if it is there.
+    Arg:
+        Delivery_System - tracks the delivery system
+    
+    Return:
+        Int: number of completed orders (by how many)
+    
+    Primary Author: Neil Vu (Assisted by Angela)
+    
+    Techinques: Conditional Expression.
+    """
+    count = len(delivery_system.completed)
+    return count if count > 0 else 0
     
     # Problem B.1) assembling pizza with a timer countdown
 def time_countdown():
