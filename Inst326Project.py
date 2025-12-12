@@ -149,45 +149,8 @@ def time_countdown():
             print("Ran out of time!")
             return False
     
-<<<<<<< HEAD
-    
-        #Problem B)2. Max Amount of Selection of Toppings
-        
-        #### 2). This section asks for how many max amount opping selections that each player can use for the game (MOST CAN BE ESTABLISHED USING SELF CLAUSE)
-                
-def pizza_amount_selection(self, pizza_type):
-        """THIS SECTION WILL BE DELETED - I reported it to my survey.
-        Sets the max amount of toppings in the pizza assembly
-        
-        Args: 
-            pizza_type = connects from the assembly line and in prev. functions on type of pizzas
-        
             
-        Return:
-            self.ingreidents = the ingridents represented
-            apply_ingr = the ingridents applied
-            
-        Primary Author: Neil Vu
-        Techinques: Sets, Dictionaries, Boolean Values (matching a specific requirement)
     
-        """
-        #make a dict that shows the lists
-        self.pizza_type = {self.name_pizza:self.ingridents}
-        pizza_type = self.pizza_type
-        #Make a for loop that decides how many ingredients that they need 
-        for amt_ing in pizza_type:
-            #Filter based on the ingredients and the quantity of it
-            self.ingridents, amt_ing
-            #Choose how many toppings we need for max (one says three), then apply it
-            #[EXP1 if COND1 else COND2]
-            [apply_ingr if amt_ing <= 3 else f"Must meet 3 toppings max"]
-            #Apply to the following 
-            return self.ingridents, apply_ingr
-    
-    
-    
-=======
->>>>>>> 1c35e8c36d0518618d87c95e7c7fbd83522982b6
     ## PROBLEM C: Delivery
     #Probelm C - Jaena Manalo
     #Pizza Delivery
