@@ -149,6 +149,7 @@ def time_countdown():
             print("Ran out of time!")
             return False
     
+<<<<<<< HEAD
     
         #Problem B)2. Max Amount of Selection of Toppings
         
@@ -185,6 +186,8 @@ def pizza_amount_selection(self, pizza_type):
     
     
     
+=======
+>>>>>>> 1c35e8c36d0518618d87c95e7c7fbd83522982b6
     ## PROBLEM C: Delivery
     #Probelm C - Jaena Manalo
     #Pizza Delivery
@@ -248,6 +251,8 @@ def PizzaGame():
             time.sleep(20)
             clear_screen()
             
+            start_time = time.time()
+            
             while True:
                 player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas: ")
                 ingredients_list = player_input.split()
@@ -274,11 +279,18 @@ def PizzaGame():
                     print("Perfect! The pizza assembly is correct")
                     print("The pizza is now cooking...")
                     time.sleep(10)
-                    delivery.add_order(pizza)
-                    print("Pizza was completed and sent for delivery!")
+                    
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
+                    
+                    if elapsed_time <= 180:
+                        delivery.add_order(pizza)
+                        print("Pizza was completed and sent for delivery!")
+                    else:
+                        print("Too slow! Pizza took too long.")   
                     break
                 else:
-                    print("The assembled pizza does not match the order try again")
+                    print("Wrong pizza, try again")
                 
                         
         elif choice.lower() == "no":
