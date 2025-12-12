@@ -51,7 +51,7 @@ class Pizza:
             
         Primary Author: Angela Vaught 
         """
-        return f"Order #:{self.order_number}: Size: {self.size} Sauce type: {self.sauce} Toppings: {', '.join(self.toppings)}"
+        return f"Order #:{self.order_number}, \n Size: {self.size} \n Sauce type: {self.sauce} \n Toppings: {', '.join(self.toppings)}"
 
     
 def load_pizza_menu():
