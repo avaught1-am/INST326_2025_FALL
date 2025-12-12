@@ -272,6 +272,8 @@ def PizzaGame():
                 
                         
         elif choice.lower() == "no":
+            total_completed_orders = count_completed_orders(delivery)
+            print(f"You have completed {total_completed_orders} orders.")
             print("thanks for playing!")
             print("goodbye!")
             break
