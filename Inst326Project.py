@@ -70,7 +70,7 @@ def load_pizza_menu():
     
 # Problem A: Creating Customer Orders based on the type of pizzas
 
-def customer_order():
+def customer_order(order_type = None):
         """Identifies the customer's order through searching different types of pizzas they wished to order
         
         Returns:
@@ -79,7 +79,7 @@ def customer_order():
             topping =  selected type of toppings (if desired) 
         
         Primary Author: Neil Vu (Edited: Angela)
-        Techinques: Dictionaries (keys and values)
+        Techinques: Optional Parameters
     
         Side Effects:
             Modifes the different orders for each customer type (by each round of the game)
@@ -87,7 +87,8 @@ def customer_order():
         """
         pizza_data = load_pizza_menu()
         
-        order_type = random.choice(["preset", "custom"])
+        if order_type is None:
+            order_type = random.choice(["preset","custom"])
         
         if order_type == "preset":
             preset_name = random.choice(list(pizza_data["preset_pizzas"].keys()))
