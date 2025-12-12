@@ -51,7 +51,7 @@ class Pizza:
             
         Primary Author: Angela Vaught 
         """
-        return f"Order #{self.order_number}: {self.size} pizza with {', '.join(self.toppings)} and {self.sauce} sauce"
+        return f"Order #:{self.order_number}: Size: {self.size} Toppings: {', '.join(self.toppings)} Sauce type: {self.sauce}"
 
     
 def load_pizza_menu():
@@ -230,7 +230,7 @@ def PizzaGame():
             start_time = time.time()
             
             while True:
-                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas: ")
+                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) make sure to write in the two-word toppings with an underscore (separate the toppings with spaces, no commas: ")
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 4:
