@@ -51,7 +51,7 @@ class Pizza:
             
         Primary Author: Angela Vaught 
         """
-        return f"Order #:{self.order_number}: Size: {self.size} Toppings: {', '.join(self.toppings)} Sauce type: {self.sauce}"
+        return f"Order #:{self.order_number}: Size: {self.size} Sauce type: {self.sauce} Toppings: {', '.join(self.toppings)}"
 
     
 def load_pizza_menu():
@@ -261,6 +261,7 @@ def PizzaGame():
                     
                     if elapsed_time <= 180:
                         delivery.add_order(pizza)
+                        delivery.complete_order(pizza.order_number)
                         print("Pizza was completed and sent for delivery!")
                     else:
                         print("Too slow! Pizza took too long.")   
