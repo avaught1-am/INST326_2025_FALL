@@ -2,7 +2,6 @@
 
 
 
-## Attribution Table
 
 ## Attribution Table
 
@@ -19,8 +18,9 @@ PizzaDelivery.show_deliveries | Jaena Manalo | lambda with sorted(), set differe
 PizzaGame (main loop) | Group | user interaction loop
 
 
-
-
+# Data Sources used:
+## pizza_data.json
+## The file `pizza_data.json` was created by the project team and contains original game data, including pizza sizes, sauces, toppings, and preset pizza definitions. No external datasets or assets were used.
 
 
 Files in repository:
