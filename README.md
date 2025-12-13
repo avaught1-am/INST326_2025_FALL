@@ -7,3 +7,5 @@ Files in repository:
     with their corresponding types
 "README.md" is the written documentation of how our project functions
 
+Instructions/Things to note when running program:
+-
