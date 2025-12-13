@@ -30,6 +30,25 @@ This question asks if you can accept an order. You can make two choices.
 
 ##### STEP 2: Memorize what the customer requested for a specific pizza order.
 
+Once you accept the request, you will be given a task that will test your memory in order to make the pizza.
+
+The process of this step will be as folowing
+
+A). First it will appear with a given type of pizza from one of the most common list in the pizza branch. ###### Your task is to memorize the description of the pizza for about 10 seconds, then you will need to retrieve the information by typing exactly what it says from that description. 
+
+B). If you got it right, it will accept that response - which will then start the pizza oven. If completed on time within 15 seconds or less, that pizza is successfully delivered to the customer. If you get incorrect response, you will receive an error message, meaning you will need to try again until you get the correct type of pizza as specified.
+
+WARNING: If you continue to fail the process and you finally got the step correct, that order will be declined and you will lose the game.
+
+Now that you know the process, you will need to know the specific types of pizzas in order to begin this memory game
+
+###### SPECIFIC PIZZA TYPES YOU NEED TO MEMORIZE
+
+- 1). Size (small, medium or large)
+- 2). Sauce Type
+- 3). Toppings
+
+
 
 
 #### References
