@@ -1,5 +1,28 @@
 # Work at a Pizza Place!
 
+
+
+## Attribution Table
+
+## Attribution Table
+
+Method/Function | Primary Author | Techniques Demonstrated
+----------------|----------------|-------------------------
+clear_screen | Angela Vaught | os.system, cross-platform functionality
+load_pizza_menu | Angela Vaught | json.load()
+customer_order | Neil Vu | optional parameters, randomization
+count_completed_orders | Neil Vu | conditional expression
+time_countdown | Angela Vaught | f-strings, time measurement
+PizzaDelivery.add_order | Jaena Manalo | list append, print formatting
+PizzaDelivery.complete_order | Jaena Manalo | set operations
+PizzaDelivery.show_deliveries | Jaena Manalo | lambda with sorted(), set difference
+PizzaGame (main loop) | Group | user interaction loop
+
+
+
+
+
+
 Files in repository:
 "Inst326Project" is the main code of the Pizza Game
 "pizza_data.json" is the file that stores the pizza data from the menu. It
@@ -7,10 +30,6 @@ Files in repository:
     with their corresponding types
 "README.md" is the written documentation of how our project functions
 
-<<<<<<< HEAD
-Instructions/Things to note when running program:
--
-=======
 
 #### Purpose of the Game:
 
@@ -58,4 +77,3 @@ Now that you know the process, you will need to know the specific types of pizza
 #### References
 
 All ideas were generally made from our own and do not reflect from given sources in this classroom (unless otherwise stated).
->>>>>>> baf34b74813325f01b1039d13135241166e044cf

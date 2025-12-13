@@ -281,7 +281,7 @@ def PizzaGame():
             start_time = time.time()
             
             while True:
-                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough) (separate with spaces, no commas): ")
+                player_input = input("please start assembling the pizza, start with size and dough (ex. medium dough, etc,) (separate with commas): ")
                 ingredients_list = player_input.split()
                 # Have the player type in dough for the assembly
                 if len(ingredients_list) < 3:
