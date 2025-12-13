@@ -7,3 +7,10 @@ Files in repository:
     with their corresponding types
 "README.md" is the written documentation of how our project functions
 
+
+
+
+
+#### References
+
+All ideas were generally made from our own and do not reflect from given sources in this classroom (unless otherwise stated).
