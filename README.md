@@ -77,3 +77,5 @@ Now that you know the process, you will need to know the specific types of pizza
 #### References
 
 All ideas were generally made from our own and do not reflect from given sources in this classroom (unless otherwise stated).
+Instructions/Things to note when running program:
+-
